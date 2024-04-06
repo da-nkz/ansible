@@ -8,8 +8,16 @@
     apt: 
       update_cache: yes
   
-
    -name: install apache
     apt:
       name: apache2
+      state: latest
+      
+   -name: update repository index
+    dnf: 
+      update_cache: yes
+  
+   -name: install apache
+    dnf:
+      name: httpd
       state: latest
